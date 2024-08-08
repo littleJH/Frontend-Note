@@ -1,0 +1,51 @@
+# CommonJS
+
+`node` 环境的模块化方案
+
+仅有一个入口文件（启动文件），一般为 `index.js` 
+
+> 怎么隐藏，怎么暴露？
+> 
+
+默认全部隐藏，需要手动暴露
+
+导出 `exports`
+
+导入 `require` 
+
+```jsx
+exports.abc = 'abc'
+
+exports.fn = () => {}
+
+/*
+	相当于
+	
+	exports = {
+		abc: 'abc',
+		fn: () => {}
+	}
+*/
+```
+
+### nodejs 对 CommonJS 的实现
+
+1. 运行到 `require` ，找到 `require(url)` 中的文件，被导入的模块才会执行
+2. 模拟实现
+    1. 通过 *立即执行函数* 防止 *变量污染*
+    2. `module.exports` 跟 `exports` 是同一个东西
+    
+    ```jsx
+    (function (module) {
+    	module.exports = {}
+    	const exports = module.exports
+    	
+    	exports.abc = 'abc'
+    	
+    	exports.fn = () => {}
+    	
+    	return module.exports
+    })()
+    ```
+    
+3. 为了避免重复导入，nodejs 开启了 *模块缓存* ，即使导入多次，依然只执行一次

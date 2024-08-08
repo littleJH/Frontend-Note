@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>单例模式弹框</title>
+  </head>
+  <style>
+    #modal {
+      width: 200px;
+      height: 200px;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      border: 1px solid red;
+    }
+  </style>
+  <body>
+    <button id="open">打开弹框</button>
+    <button id="close">关闭弹框</button>
+  </body>
+
+  <script>
+    // 立即执行表达式+闭包
+    const Modal = (function () {
+      let modal = null
+      return {
+        getInstance() {
+          if (!modal) {
+            modal = document.createElement('div')
+            modal.innerHTML = 'modal'
+            modal.id = 'modal'
+            modal.style.display = 'none'
+            document.body.appendChild(modal)
+          }
+          return modal
+        },
+        show() {
+          const modal = this.getInstance()
+          debugger
+          modal.style.display = 'block'
+        },
+        hide() {
+          const modal = this.getInstance()
+          modal.style.display = 'none'
+        }
+      }
+    })()
+
+    // 类 + 静态属性
+    class Modal {
+      static instance = null
+
+      static getInstance() {
+        if (!Modal.instance) {
+          Modal.instance = new Modal()
+        }
+        return Modal.instance
+      }
+
+      constructor() {
+        if (!Modal.instance) {
+          const modal = document.createElement('div')
+          modal.innerHTML = 'modal'
+          modal.id = 'modal'
+          modal.style.display = 'none'
+          document.body.appendChild(modal)
+          this.modal = modal
+          Modal.instance = this
+        }
+
+        return Modal.instance
+      }
+
+      show() {
+        this.modal.style.display = 'block'
+      }
+      hide() {
+        this.modal.style.display = 'none'
+      }
+    }
+
+    const instance = Modal.getInstance()
+
+    document.getElementById('open').addEventListener('click', () => {
+      instance.show()
+    })
+
+    document.getElementById('close').addEventListener('click', () => {
+      instance.hide()
+    })
+  </script>
+</html>
