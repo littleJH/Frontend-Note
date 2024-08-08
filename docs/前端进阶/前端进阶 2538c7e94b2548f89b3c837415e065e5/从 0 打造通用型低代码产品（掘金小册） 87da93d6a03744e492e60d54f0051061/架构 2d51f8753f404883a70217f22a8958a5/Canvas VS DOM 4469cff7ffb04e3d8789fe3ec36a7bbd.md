@@ -1,1 +1,0 @@
-# Canvas VS DOM

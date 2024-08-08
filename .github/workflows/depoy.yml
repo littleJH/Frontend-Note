@@ -54,19 +54,5 @@ jobs:
           host: ${{ secrets.SERVER_IP }}
           username: ${{ secrets.SERVER_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
-          source: 'dist/*'
+          source: 'docs/.vitepress/dist/*'
           target: '/www/wwwroot/frontend-note.littlejh.cn'
-
-      - name: Verify deployment
-        uses: appleboy/ssh-action@master
-        with:
-          host: ${{ secrets.SERVER_IP }}
-          username: ${{ secrets.SERVER_USER }}
-          key: ${{ secrets.SSH_PRIVATE_KEY }}
-          script: |
-            if [ -f /www/wwwroot/frontend-note.littlejh.cn/dist/index.html ]; then
-              echo "Deployment successful: index.html found"
-            else
-              echo "Deployment may have failed: index.html not found"
-              exit 1
-            fi
