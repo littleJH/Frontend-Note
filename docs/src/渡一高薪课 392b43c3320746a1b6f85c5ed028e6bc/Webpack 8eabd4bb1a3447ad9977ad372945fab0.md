@@ -10,13 +10,17 @@
 
 ---
 
+
+
 ### 一、初始化
 
 > 将 *CLI参数*，*配置文件*，*默认配置*，合并成最终的配置对象。
 
+
+
 ### 二、编译
 
----
+
 
 #### 1. 创建 `chunk`
 
@@ -43,9 +47,13 @@
 
 
 
+
+
 #### 2. 构建依赖
 
 > 在这个阶段开始，对每个 `chunk ` 递归地构建所有依赖。
+
+
 
 ##### 步骤
 
@@ -78,7 +86,9 @@
 
 注意：以上整个构建过程在每个 `chunk` 中都会同样地执行
 
-<img src="D:%5C%E5%89%8D%E7%AB%AF%E7%AC%94%E8%AE%B0%5Cvite-press-note%5Cdocs%5Csrc%5C%E6%B8%A1%E4%B8%80%E9%AB%98%E8%96%AA%E8%AF%BE%20392b43c3320746a1b6f85c5ed028e6bc%5CWebpack%208eabd4bb1a3447ad9977ad372945fab0.assets%5Cimage-20240814201450079.png" alt="image-20240814201450079" style="zoom:50%;" />	
+![image-20240814201450079](https://raw.githubusercontent.com/littleJH/PicBed/main/img/image-20240814201450079.png)	
+
+
 
 #### 3. 创建 `chunk assets` 
 
@@ -88,13 +98,17 @@
 
 注意：最终生成的资源可能不止一个文件，例如配置了 `devtool: source-map`，就会另外生成一个`xxx.map.js`文件
 
-<img src="D:%5C%E5%89%8D%E7%AB%AF%E7%AC%94%E8%AE%B0%5Cvite-press-note%5Cdocs%5Csrc%5C%E6%B8%A1%E4%B8%80%E9%AB%98%E8%96%AA%E8%AF%BE%20392b43c3320746a1b6f85c5ed028e6bc%5CWebpack%208eabd4bb1a3447ad9977ad372945fab0.assets%5Cimage-20240814201932832.png" alt="image-20240814201932832" style="zoom:50%;" />	
+​	![](https://raw.githubusercontent.com/littleJH/PicBed/main/img/image-20240814201932832.png)
+
+
 
 ##### 4. 合并 `chunk assets`
 
 将所有 `chunk assets` 合并，这是最重要输出到 `output` 配置的目录中的文件资源，同时会生成一个总的 `hash`
 
-<img src="D:%5C%E5%89%8D%E7%AB%AF%E7%AC%94%E8%AE%B0%5Cvite-press-note%5Cdocs%5Csrc%5C%E6%B8%A1%E4%B8%80%E9%AB%98%E8%96%AA%E8%AF%BE%20392b43c3320746a1b6f85c5ed028e6bc%5CWebpack%208eabd4bb1a3447ad9977ad372945fab0.assets%5Cimage-20240814202429136.png" alt="image-20240814202429136" style="zoom:50%;" />	
+![](https://raw.githubusercontent.com/littleJH/PicBed/main/img/image-20240814202429136.png)	
+
+
 
 
 
@@ -102,7 +116,7 @@
 
 通过 nodejs 的 fs 模块写入文件
 
-<img src="D:%5C%E5%89%8D%E7%AB%AF%E7%AC%94%E8%AE%B0%5Cvite-press-note%5Cdocs%5Csrc%5C%E6%B8%A1%E4%B8%80%E9%AB%98%E8%96%AA%E8%AF%BE%20392b43c3320746a1b6f85c5ed028e6bc%5CWebpack%208eabd4bb1a3447ad9977ad372945fab0.assets%5Cimage-20240814202703268.png" alt="image-20240814202703268" style="zoom:50%;" />	
+![](https://raw.githubusercontent.com/littleJH/PicBed/main/img/image-20240814202703268.png)	
 
 
 
@@ -112,7 +126,7 @@
 
 总过程
 
-<img src="D:%5C%E5%89%8D%E7%AB%AF%E7%AC%94%E8%AE%B0%5Cvite-press-note%5Cdocs%5Csrc%5C%E6%B8%A1%E4%B8%80%E9%AB%98%E8%96%AA%E8%AF%BE%20392b43c3320746a1b6f85c5ed028e6bc%5CWebpack%208eabd4bb1a3447ad9977ad372945fab0.assets%5Cimage-20240814201251288.png" alt="image-20240814201251288" style="zoom:50%;" />	
+![](https://raw.githubusercontent.com/littleJH/PicBed/main/img/image-20240814201251288.png)
 
 
 
@@ -121,6 +135,8 @@
 ## 编译结果分析
 
 ---
+
+
 
 ### 模拟打包结果
 
@@ -178,9 +194,9 @@
 
 ## 加载器 loader
 
----
-
 > loader 就是一个函数，用于将一段代码转换为另一段代码，本之上是对字符串的转换。
+
+
 
 执行时机：模块解析中，读取文件内容之后，构建抽象语法树之前。
 
@@ -212,7 +228,9 @@
 
 **处理 loaders 流程：**
 
-<img src="D:%5C%E5%89%8D%E7%AB%AF%E7%AC%94%E8%AE%B0%5Cvite-press-note%5Cdocs%5Csrc%5C%E6%B8%A1%E4%B8%80%E9%AB%98%E8%96%AA%E8%AF%BE%20392b43c3320746a1b6f85c5ed028e6bc%5CWebpack%208eabd4bb1a3447ad9977ad372945fab0.assets%5Cimage-20240814205718147.png" alt="image-20240814205718147" style="zoom:50%;" />	
+![](https://raw.githubusercontent.com/littleJH/PicBed/main/img/image-20240814205718147.png)	
+
+
 
 
 
@@ -227,6 +245,8 @@
 
 
 ## 性能优化
+
+---
 
 > 性能优化分为三个模块：构建性能、传输性能、运行性能
 >
@@ -294,12 +314,10 @@
 
   
 
-  
-
   **配置示例：**
 
   ```js
-  {
+{
       module: {
           rules: [
               {
@@ -318,7 +336,7 @@
       }
   }
   ```
-
+  
   
 
   
@@ -328,7 +346,7 @@
   > 在 loader 的运行过程中，还有另外一个机制： `pitch`
 
   ```js
-  module.exports = function myloader (source) {
+module.exports = function myloader (source) {
       return `module.exports = ${source}`
   }
   
@@ -338,14 +356,14 @@
       // 如果这里里没有任何返回，那么其它 loader 得以执行
   } 
   ```
-
+  
   
 
   **`pitch` 的运行机制：**
 
   
 
-  <img src="D:%5C%E5%89%8D%E7%AB%AF%E7%AC%94%E8%AE%B0%5Cvite-press-note%5Cdocs%5Csrc%5C%E6%B8%A1%E4%B8%80%E9%AB%98%E8%96%AA%E8%AF%BE%20392b43c3320746a1b6f85c5ed028e6bc%5CWebpack%208eabd4bb1a3447ad9977ad372945fab0.assets%5Cimage-20240815104444002.png" alt="image-20240815104444002" style="zoom:50%;" />	
+  ![](https://raw.githubusercontent.com/littleJH/PicBed/main/img/image-20240815104444002.png)	
 
   
 
@@ -378,6 +396,8 @@
 > - 不同于手动分包，自动分包是从**宏观层面**考虑的，不具体到每一个包
 > - 重点是 **分包策略**，`webpack` 会按照策略自动分包，它实际上使用的是 webpack 内部插件 `SplitChunksPlugin`去完成的
 
+
+
 #### 分包流程
 
 - 每个 `chunk` 都会维护一个 *模块记录表*，webpage 会在这些表中寻找重复的模块，从而提取公共代码
@@ -385,6 +405,8 @@
 - 将分离出来的模块从原 `chunk` 中移除，并修正原始包代码
 
 注意：分包的基本单位是模块，所以即使设置了 `maxSize` 小于模块的大小，实际上模块的大小也有可能超过 `maxSize`！
+
+
 
 #### 基本配置
 
@@ -447,6 +469,8 @@
 
 > 移除模块内的、不会产生副作用的无效代码 
 
+
+
 单模块体积压缩，可以和分包结合使用，webpack 生产环境默认开启，使用的工具是 `terser`
 
 
@@ -454,6 +478,8 @@
 ###  tree-shaking（**传输）important！**
 
 > 移除模块之间的、不会产生副作用的无效代码 
+
+
 
 单模块体积压缩，可以和分包结合使用，webpack 生产环境默认开启
 
@@ -526,6 +552,8 @@ obj.add()
 
 
 #### 若干问题
+
+
 
 ##### 1. 第三方库没有使用 ESM
 
@@ -632,8 +660,14 @@ module.exports = {
 
 
 
-## 面试题
 
 
+## 扩展
 
-****
+### 多页应用
+
+### `Vue` 单页应用
+
+### `React` 单页应用
+
+### `Node` 应用

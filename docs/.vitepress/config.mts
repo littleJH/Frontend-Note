@@ -20,5 +20,11 @@ export default defineConfig({
     ],
 
   },
-  ignoreDeadLinks: true
+  ignoreDeadLinks: true,
+  markdown: {
+    theme: {
+      "dark" : "one-dark-pro",
+      "light": "one-light"
+    }
+  }
 })
