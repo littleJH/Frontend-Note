@@ -4,15 +4,15 @@ layout: home
 
 hero:
   name: "frontend note of jiahe"
-  text: "A VitePress Site"
-  tagline: My great project tagline
+  # text: "A VitePress Site"
+  # tagline: My great project tagline
   actions:
     - theme: brand
-      text: Markdown Examples
-      link: /markdown-examples
-    - theme: alt
-      text: API Examples
-      link: /api-examples
+      text: 开始
+      link: /渡一高薪课/渡一高薪课
+    # - theme: alt
+    #   text: API Examples
+    #   link: /api-examples
 
 features:
   - title: Feature A

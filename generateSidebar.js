@@ -7,18 +7,23 @@ function generateSidebar(dir, baseDir = '') {
   const entries = fs.readdirSync(dir, { withFileTypes: true });
 
   return entries.map(entry => {
-    const name = entry.name.replace(/\.md$/, '').replace(/[a-f0-9]{32}/, "");
+    const name = entry.name.replace(/\.md$/, '').replace(/[a-f0-9]{32}/, "").trim();
     if (entry.isDirectory()) {
-      return {
+      const result = {
         text: name,
         collapsed: true,
         items: generateSidebar(path.join(dir, entry.name), path.join(baseDir, entry.name))
       };
+      fs.renameSync(path.join(dir, entry.name), path.join(dir, name));
+      return result
     } else if (entry.isFile() && entry.name.endsWith('.md')) {
-      return {
+      const result = {
         text: name,
         link: path.join('/', baseDir, entry.name.replace(/\.md$/, "")).replace(/\\/g, '/')
       };
+      fs.renameSync(path.join(dir, entry.name), path.join(dir, name + '.md'));
+
+      return result
     }
   }).filter(Boolean);
 }
