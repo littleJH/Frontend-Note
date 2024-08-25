@@ -8,6 +8,7 @@ function generateSidebar(dir, baseDir = '') {
 
   return entries.map(entry => {
     const name = entry.name.replace(/\.md$/, '').replace(/[a-f0-9]{32}/, "").trim();
+
     if (entry.isDirectory()) {
       const result = {
         text: name,
@@ -21,8 +22,11 @@ function generateSidebar(dir, baseDir = '') {
         text: name,
         link: path.join('/', baseDir, entry.name.replace(/\.md$/, "")).replace(/\\/g, '/')
       };
+      // 去除链接中的hash
+      const data = fs.readFileSync(path.join(dir, entry.name), 'utf8');
+      encodeURI(decodeURI(data).replace(/([a-f0-9]{32})/, "").trim())
+      fs.writeFileSync(path.join(dir, entry.name), data)
       fs.renameSync(path.join(dir, entry.name), path.join(dir, name + '.md'));
-
       return result
     }
   }).filter(Boolean);
