@@ -27,16 +27,76 @@ export default {
                 "link": "/渡一高薪课/前端框架/React/React vs Vue"
               },
               {
-                "text": "React 若干问题及其解决方案",
-                "link": "/渡一高薪课/前端框架/React/React 若干问题及其解决方案"
-              },
-              {
-                "text": "React 高级",
+                "text": "React 就业",
                 "collapsed": true,
                 "items": [
                   {
-                    "text": "Hooks",
-                    "link": "/渡一高薪课/前端框架/React/React 高级/Hooks"
+                    "text": "React 入门",
+                    "collapsed": true,
+                    "items": [
+                      {
+                        "text": "01 属性默认值和类型验证",
+                        "link": "/渡一高薪课/前端框架/React/React 就业/React 入门/01 属性默认值和类型验证"
+                      },
+                      {
+                        "text": "02 高阶组件",
+                        "link": "/渡一高薪课/前端框架/React/React 就业/React 入门/02 高阶组件"
+                      },
+                      {
+                        "text": "03 Ref 引用",
+                        "link": "/渡一高薪课/前端框架/React/React 就业/React 入门/03 Ref 引用"
+                      },
+                      {
+                        "text": "04 Context 上下文",
+                        "link": "/渡一高薪课/前端框架/React/React 就业/React 入门/04 Context 上下文"
+                      },
+                      {
+                        "text": "05 Render Props 渲染属性",
+                        "link": "/渡一高薪课/前端框架/React/React 就业/React 入门/05 Render Props 渲染属性"
+                      },
+                      {
+                        "text": "06 Portals 传送门",
+                        "link": "/渡一高薪课/前端框架/React/React 就业/React 入门/06 Portals 传送门"
+                      },
+                      {
+                        "text": "07 Error Boundary 错误边界",
+                        "link": "/渡一高薪课/前端框架/React/React 就业/React 入门/07 Error Boundary 错误边界"
+                      },
+                      {
+                        "text": "08 组件渲染性能优化",
+                        "link": "/渡一高薪课/前端框架/React/React 就业/React 入门/08 组件渲染性能优化"
+                      },
+                      {
+                        "text": "Hooks",
+                        "link": "/渡一高薪课/前端框架/React/React 就业/React 入门/Hooks"
+                      },
+                      {
+                        "text": "React 若干问题及其解决方案",
+                        "link": "/渡一高薪课/前端框架/React/React 就业/React 入门/React 若干问题及其解决方案"
+                      }
+                    ]
+                  },
+                  {
+                    "text": "React 高阶",
+                    "collapsed": true,
+                    "items": [
+                      {
+                        "text": "01 前端框架的理解",
+                        "link": "/渡一高薪课/前端框架/React/React 就业/React 高阶/01 前端框架的理解"
+                      },
+                      {
+                        "text": "02 React 和 Vue 描述页面的区别",
+                        "link": "/渡一高薪课/前端框架/React/React 就业/React 高阶/02 React 和 Vue 描述页面的区别"
+                      },
+                      {
+                        "text": "03 前端框架的分类",
+                        "link": "/渡一高薪课/前端框架/React/React 就业/React 高阶/03 前端框架的分类"
+                      },
+                      {
+                        "text": "04 虚拟 DOM",
+                        "link": "/渡一高薪课/前端框架/React/React 就业/React 高阶/04 虚拟 DOM"
+                      }
+                    ]
                   }
                 ]
               }
@@ -47,11 +107,6 @@ export default {
       {
         "text": "学习资料",
         "link": "/渡一高薪课/学习资料"
-      },
-      {
-        "text": "学习路线",
-        "collapsed": true,
-        "items": []
       },
       {
         "text": "学习路线",
@@ -88,10 +143,6 @@ export default {
             "link": "/渡一高薪课/工程化/模块化"
           }
         ]
-      },
-      {
-        "text": "工程化",
-        "link": "/渡一高薪课/工程化"
       },
       {
         "text": "渡一高薪课",
