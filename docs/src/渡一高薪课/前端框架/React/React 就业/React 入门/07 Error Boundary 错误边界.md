@@ -29,7 +29,7 @@
 
 `<ErrorBoundary>` 基本实现
 
-```react
+```jsx
 import React, { Component } from 'react'
 
 export default class ErrorBoundary extends Component {

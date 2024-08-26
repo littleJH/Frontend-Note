@@ -10,7 +10,7 @@
 
 在 *类组件* 中事件处理函数的 `this` 并不会指向组件本身，需要手动进行修正
 
-```react
+```jsx
 class MyComponent extends React.Component {
     constructor () {
         super()
@@ -42,7 +42,7 @@ class MyComponent extends React.Component {
 
 出于性能考虑，`React` 会将多次 `setState` 合并，所以 `setState` 回调函数获取的值是合并更新后最新的 `state`，并且 `render` 只会重新执行一次
 
-```react
+```jsx
 class MyComponent {
     constructor() {
         this.state = {
@@ -104,7 +104,7 @@ MyComponent.defaultProps {
 
 示例：
 
-```react
+```jsx
 import PropTypes from 'prop-types';
 
 class Greeting extends React.Component {

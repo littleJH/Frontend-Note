@@ -17,7 +17,7 @@
 
 *themeContext.js*
 
-```react
+```jsx
 import React from "react"
 
 const themeContext = React.createContext(theme.light)
@@ -34,7 +34,7 @@ export default themeContext
 
 *App.jsx*
 
-```react
+```jsx
 import React, { forwardRef, useEffect, useImperativeHandle, useRef, useState } from "react"
 import themeContext from "./context/themeContext"
 import Child from "./component/04 context/Child"
@@ -60,7 +60,7 @@ export default App
 
 *Child.jsx*
 
-```react
+```jsx
 import React from 'react'
 import themeContext from '../../context/themeContext'
 
@@ -75,7 +75,7 @@ export default function Child() {
 
 *Header.jsx*
 
-```react
+```jsx
 import React from 'react'
 import themeContext from '../../context/themeContext'
 import theme from '../../context/themeContext'

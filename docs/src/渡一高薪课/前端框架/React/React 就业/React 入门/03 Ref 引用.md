@@ -16,7 +16,7 @@
 
 下面的代码也是错的！！！
 
-```react
+```jsx
 function ChildInput (props) {
     return (
     	<input ref={props.ref}></input>
@@ -45,7 +45,7 @@ function App () {
 
 类组件中，将 *ref* 应用到子组件上，可以直接通过 `this.childRef` 调用子组件的方法
 
-```react
+```jsx
 import React, { Component } from 'react'
 
 // 子组件
@@ -101,7 +101,7 @@ export default class Ref extends Component {
 
 应用场景：在 *Grand* 组件中想获取 *Son* 组件中某个元素的 *DOM*
 
-```react
+```jsx
 function Son () {
     
 }
@@ -125,7 +125,7 @@ function Grand () {
 
 但是问题来了：高阶函数直接返回一个新的组件（新的组件只能接收 *props*），如果正常写 *ref* 会被应用到新的组件上，无法传递给旧的组件。而 `forwardRef((props, ref) => {})` 正好能接收 *ref* 作为参数，然后传递给旧组件
 
-```react
+```jsx
 import React, { forwardRef, useEffect, useRef } from "react"
 
 // 高阶组件函数
@@ -178,7 +178,7 @@ export default App
 
 函数组件示例，不同的是，想获取的是子组件的 DOM 节点，而不是组件实例的方法，更何况，函数组件根本不存在实例
 
-```react
+```jsx
 import { forwardRef, useEffect, useRef, useState } from 'react'
 
 const withLog = (WrapComponent) => {
@@ -238,7 +238,7 @@ export default App
 - createHandler: 处理函数，返回值是暴露给父组件的 *ref* 对象，对象上可以保存需要暴露的方法
 - deps：依赖项，发生变化时生成新的 *ref* 对象
 
-```react
+```jsx
 const Child = forwardRef((props, ref) => {
   const inputRef = useRef(null)
 
