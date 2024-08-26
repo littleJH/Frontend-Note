@@ -5,7 +5,7 @@
   "scripts": {
     "dir": "node generateSidebar.js",
     "docs:dev": "npm run dir & vitepress dev docs",
-    "docs:build": "npm run dir & vitepress build docs",
+    "docs:build": "vitepress build docs",
     "docs:preview": "npm run dir & vitepress preview docs"
   },
   "author": "",
