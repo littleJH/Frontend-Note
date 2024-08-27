@@ -15,7 +15,7 @@ function generateSidebar(dir, baseDir = '') {
         collapsed: true,
         items: generateSidebar(path.join(dir, entry.name), path.join(baseDir, entry.name))
       };
-      fs.renameSync(path.join(dir, entry.name), path.join(dir, name));
+      // fs.renameSync(path.join(dir, entry.name), path.join(dir, name));
       return result
     } else if (entry.isFile() && entry.name.endsWith('.md')) {
       const result = {
@@ -26,7 +26,7 @@ function generateSidebar(dir, baseDir = '') {
       // const data = fs.readFileSync(path.join(dir, entry.name), 'utf8');
       // encodeURI(decodeURI(data).replace(/([a-f0-9]{32})/, "").trim())
       // fs.writeFileSync(path.join(dir, entry.name), data)
-      fs.renameSync(path.join(dir, entry.name), path.join(dir, name + '.md'));
+      // fs.renameSync(path.join(dir, entry.name), path.join(dir, name + '.md'));
       return result
     }
   }).filter(Boolean);

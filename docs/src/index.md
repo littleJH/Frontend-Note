@@ -9,7 +9,7 @@ hero:
   actions:
     - theme: brand
       text: 开始
-      link: /渡一高薪课/渡一高薪课
+      link: /渡一高薪课/开始
     # - theme: alt
     #   text: API Examples
     #   link: /api-examples

@@ -10,10 +10,10 @@ export default defineConfig({
     logo: '/logo.jpg',
     // https://vitepress.dev/reference/default-theme-config
     nav: [
-      { text: 'Home', link: '/' },
+      { text: 'Home', link: '/index' },
       {
         text: '渡一高薪课',
-        link: '/渡一高薪课/渡一高薪课',
+        link: '/渡一高薪课/开始',
       },
     ],
 

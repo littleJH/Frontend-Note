@@ -11,10 +11,6 @@ export default {
     "collapsed": true,
     "items": [
       {
-        "text": "Webpack",
-        "link": "/渡一高薪课/Webpack"
-      },
-      {
         "text": "前端框架",
         "collapsed": true,
         "items": [
@@ -95,6 +91,22 @@ export default {
                       {
                         "text": "04 虚拟 DOM",
                         "link": "/渡一高薪课/前端框架/React/React 就业/React 高阶/04 虚拟 DOM"
+                      },
+                      {
+                        "text": "05 React 整体架构",
+                        "link": "/渡一高薪课/前端框架/React/React 就业/React 高阶/05 React 整体架构"
+                      },
+                      {
+                        "text": "06 Fiber 双缓冲",
+                        "link": "/渡一高薪课/前端框架/React/React 就业/React 高阶/06 Fiber 双缓冲"
+                      },
+                      {
+                        "text": "07 React 渲染流程",
+                        "link": "/渡一高薪课/前端框架/React/React 就业/React 高阶/07 React 渲染流程"
+                      },
+                      {
+                        "text": "08 Scheduler 调度器",
+                        "link": "/渡一高薪课/前端框架/React/React 就业/React 高阶/08 Scheduler 调度器"
                       }
                     ]
                   }
@@ -109,10 +121,6 @@ export default {
         "link": "/渡一高薪课/学习资料"
       },
       {
-        "text": "学习路线",
-        "link": "/渡一高薪课/学习路线"
-      },
-      {
         "text": "工程化",
         "collapsed": true,
         "items": [
@@ -121,22 +129,12 @@ export default {
             "link": "/渡一高薪课/工程化/CSS 工程化（less)"
           },
           {
-            "text": "包管理器",
-            "link": "/渡一高薪课/工程化/包管理器"
+            "text": "Webpack",
+            "link": "/渡一高薪课/工程化/Webpack"
           },
           {
-            "text": "模块化",
-            "collapsed": true,
-            "items": [
-              {
-                "text": "CommonJS",
-                "link": "/渡一高薪课/工程化/模块化/CommonJS"
-              },
-              {
-                "text": "ES6 模块化",
-                "link": "/渡一高薪课/工程化/模块化/ES6 模块化"
-              }
-            ]
+            "text": "包管理器",
+            "link": "/渡一高薪课/工程化/包管理器"
           },
           {
             "text": "模块化",
@@ -145,8 +143,8 @@ export default {
         ]
       },
       {
-        "text": "渡一高薪课",
-        "link": "/渡一高薪课/渡一高薪课"
+        "text": "开始",
+        "link": "/渡一高薪课/开始"
       },
       {
         "text": "语言基础",
@@ -233,10 +231,6 @@ export default {
             "link": "/渡一高薪课/语言基础/Web API"
           }
         ]
-      },
-      {
-        "text": "语言基础",
-        "link": "/渡一高薪课/语言基础"
       }
     ]
   }
