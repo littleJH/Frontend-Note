@@ -125,7 +125,8 @@ ReactDOM.createRoot(document.getElementById('root')).render(<App></App>)
 
 <img src="https://xiejie-typora.oss-cn-chengdu.aliyuncs.com/2023-02-24-073639.png" alt="image-20230224153638862" style="zoom:40%;" />	
 
-当再次发生更新时，会直接将current tree 复制一份当作 workInProgress tree 进行更新。
+当再次发生更新时，会直接将 current tree 复制一份当作 workInProgress tree 进行更新。
 
 
 
+****

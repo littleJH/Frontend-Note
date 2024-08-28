@@ -105,8 +105,8 @@ export default {
                         "link": "/渡一高薪课/前端框架/React/React 就业/React 高阶/07 React 渲染流程"
                       },
                       {
-                        "text": "08 Scheduler 调度器",
-                        "link": "/渡一高薪课/前端框架/React/React 就业/React 高阶/08 Scheduler 调度器"
+                        "text": "08 React Diff 算法",
+                        "link": "/渡一高薪课/前端框架/React/React 就业/React 高阶/08 React Diff 算法"
                       }
                     ]
                   }
