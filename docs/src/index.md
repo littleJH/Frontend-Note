@@ -10,9 +10,9 @@ hero:
     - theme: brand
       text: 开始
       link: /渡一高薪课/开始
-    # - theme: alt
-    #   text: API Examples
-    #   link: /api-examples
+    - theme: alt
+      text: 交接文档
+      link: /交接文档
 
 features:
   - title: Feature A
