@@ -7,6 +7,10 @@ export default {
     "link": "/index"
   },
   {
+    "text": "交接文档",
+    "link": "/交接文档"
+  },
+  {
     "text": "渡一高薪课",
     "collapsed": true,
     "items": [
