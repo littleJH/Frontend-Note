@@ -15,6 +15,41 @@ export default {
     "collapsed": true,
     "items": [
       {
+        "text": "TypeScript",
+        "collapsed": true,
+        "items": [
+          {
+            "text": "0 index",
+            "link": "/渡一高薪课/TypeScript/0 index"
+          },
+          {
+            "text": "1 类型理解",
+            "collapsed": true,
+            "items": [
+              {
+                "text": "index",
+                "link": "/渡一高薪课/TypeScript/1 类型理解/index"
+              },
+              {
+                "text": "proj",
+                "collapsed": true,
+                "items": []
+              }
+            ]
+          },
+          {
+            "text": "2 函数与泛型",
+            "collapsed": true,
+            "items": []
+          },
+          {
+            "text": "3 类型编程",
+            "collapsed": true,
+            "items": []
+          }
+        ]
+      },
+      {
         "text": "前端框架",
         "collapsed": true,
         "items": [
