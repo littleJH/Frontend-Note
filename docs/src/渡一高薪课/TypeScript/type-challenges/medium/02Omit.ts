@@ -1,11 +1,4 @@
 /*
- * @Description: 
- * @Author: zhangjiahao
- * @Date: 2025-09-26 19:06:45
- * @LastEditors: zhangjiahao
- * @LastEditTime: 2025-09-26 19:25:12
- */
-/*
   3 - 实现 Omit
   -------
   by Anthony Fu (@antfu) #中等 #union #built-in

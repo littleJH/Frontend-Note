@@ -36,62 +36,69 @@
 
 /* _____________ 你的代码 _____________ */
 
-type DeepReadonly<T> = any
+type DeepReadonly<T> = T extends any ? {
+    readonly [P in keyof T]: T[P] extends {} ? T[P] extends Function ? T[P] : DeepReadonly<T[P]> : T[P]
+} : never
+
+/*
+可优化点：
+1. 判断 T[P] 是否兼容对象，可以用 Record 类型工具，T[P] extends Record<any, any>
+*/
 
 /* _____________ 测试用例 _____________ */
 import type { Equal, Expect } from '@type-challenges/utils'
 
 type cases = [
-  Expect<Equal<DeepReadonly<X1>, Expected1>>,
-  Expect<Equal<DeepReadonly<X2>, Expected2>>,
+    Expect<Equal<DeepReadonly<X1>, Expected1>>,
+    Expect<Equal<DeepReadonly<X2>, Expected2>>,
 ]
 
 type X1 = {
-  a: () => 22
-  b: string
-  c: {
-    d: boolean
-    e: {
-      g: {
-        h: {
-          i: true
-          j: 'string'
+    a: () => 22
+    b: string
+    c: {
+        d: boolean
+        e: {
+            g: {
+                h: {
+                    i: true
+                    j: 'string'
+                }
+                k: 'hello'
+            }
+            l: [
+                'hi',
+                {
+                    m: ['hey']
+                },
+            ]
         }
-        k: 'hello'
-      }
-      l: [
-        'hi',
-        {
-          m: ['hey']
-        },
-      ]
     }
-  }
 }
 
 type X2 = { a: string } | { b: number }
 
 type Expected1 = {
-  readonly a: () => 22
-  readonly b: string
-  readonly c: {
-    readonly d: boolean
-    readonly e: {
-      readonly g: {
-        readonly h: {
-          readonly i: true
-          readonly j: 'string'
+    readonly a: () => 22
+    readonly b: string
+    readonly c: {
+        readonly d: boolean
+        readonly e: {
+            readonly g: {
+                readonly h: {
+                    readonly i: true
+                    readonly j: 'string'
+                }
+                readonly k: 'hello'
+            }
+            readonly l: readonly [
+                'hi',
+                {
+                    readonly m: readonly ['hey']
+                },
+            ]
         }
-        readonly k: 'hello'
-      }
-      readonly l: readonly [
-        'hi',
-        {
-          readonly m: readonly ['hey']
-        },
-      ]
     }
-  }
 }
 
 type Expected2 = { readonly a: string } | { readonly b: number }

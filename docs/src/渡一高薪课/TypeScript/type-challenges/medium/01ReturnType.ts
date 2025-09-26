@@ -1,11 +1,4 @@
 /*
- * @Description: 
- * @Author: zhangjiahao
- * @Date: 2025-09-26 19:04:18
- * @LastEditors: zhangjiahao
- * @LastEditTime: 2025-09-26 19:06:33
- */
-/*
   2 - 获取函数返回类型
   -------
   by Anthony Fu (@antfu) #中等 #infer #built-in
