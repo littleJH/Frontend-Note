@@ -1,4 +1,11 @@
 /*
+ * @Description: 
+ * @Author: zhangjiahao
+ * @Date: 2025-09-26 18:17:04
+ * @LastEditors: zhangjiahao
+ * @LastEditTime: 2025-09-26 18:53:27
+ */
+/*
   898 - Includes
   -------
   by null (@kynefuk) #简单 #array
@@ -17,10 +24,14 @@
 */
 
 /* _____________ 你的代码 _____________ */
-type MyIncludes<T, U> = T extends U ? T : never
-type Includes<T extends readonly any[], U> = Equal<MyIncludes<T, U>, U> extends true ? true : false;
+type MyIncludes<T, U> = T extends U ? 1 : never
+type Includes<T extends readonly any[], U> = Equal<MyIncludes<T[number], U>, 1> extends true ? true : false;
 
-type A = Includes<['Kars', 'Esidisi', 'Wamuu', 'Santana'], 'Kars'>
+// type D = [boolean, 2, 3, 5, 6, 7][number]
+// type B = MyIncludes<D, false>
+// type A = Equal<B, 1> extends true ? true : false
+
+// type C = MyIncludes<['Kars', 'Esidisi', 'Wamuu', 'Santana'][number], 'Kars'>
 
 import type { Equal, Expect } from '@type-challenges/utils'
 
