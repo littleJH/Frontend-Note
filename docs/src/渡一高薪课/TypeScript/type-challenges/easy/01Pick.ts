@@ -31,6 +31,7 @@
 
 /* _____________ 你的代码 _____________ */
 
+// 映射类型，映射修饰符 in
 type MyPick<T, K extends keyof T> = {
     [P in K]: T[P]
 }

@@ -33,6 +33,7 @@
 
 /* _____________ 你的代码 _____________ */
 
+// 映射修饰符in，keyof关键字
 type MyReadonly<T> = {
   readonly [P in keyof T]: T[P]
 }
